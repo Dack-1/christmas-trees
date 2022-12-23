@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="UTF-8" http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 		<title>圣诞快乐</title>
 		<link
 			href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas|Open+Sans+Condensed:700|Roboto:300,400|Source+Sans+Pro"
@@ -85,7 +85,6 @@
 
 			<div class="display">
 				<h3>圣诞节快乐</h3>
-				<!-- <p>亲爱的老公！</p> -->
 			</div>
 
 		</div>
@@ -123,6 +122,42 @@
 		var src = "https://music.163.com/song/media/outer/url?id=21233912.mp3";
 		var type = "type";
 		play(src, type);
+		var _audio
+		var _isWeixinJSBridgeReady = false
+		document.addEventListener('WeixinJSBridgeReady', () => {
+		  _isWeixinJSBridgeReady = true
+		  _audio = new Audio()
+		  _audio.style.display = 'none'
+		  // 播放空音频
+		  _audio.src = 'ehttps://music.163.com/song/media/outer/url?id=21233912.mp3'
+		  _audio.play()
+		}, false)
+		
+		const initMusic = () => {
+			var setInitMuisc = () => {
+				// 播放背景音乐
+				_audio.src = 'https://music.163.com/song/media/outer/url?id=21233912.mp3'
+				_audio.play()
+		
+				document.removeEventListener('click', setInitMuisc)
+				document.removeEventListener('touchstart', setInitMuisc)
+		    }
+			document.addEventListener('click', setInitMuisc)
+		    document.addEventListener('touchstart', setInitMuisc)
+		    document.body.click()
+		}
+		  
+		const playMusic = () => {
+			if (!_isWeixinJSBridgeReady && /MicroMessenger/.test(window.navigator.userAgent)) {
+				document.addEventListener('WeixinJSBridgeReady', () => {
+		        	initMusic()
+				}, false)
+		    } else {
+				initMusic()
+		    }
+		}
+
 		console.log(IsPhone())
+		
 	</script>
 </html>
