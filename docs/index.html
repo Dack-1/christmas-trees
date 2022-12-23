@@ -8,10 +8,10 @@
 			rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css?family=Dancing+Script:700" rel="stylesheet">
 		<link rel="stylesheet" href="./style.css">
-
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	</head>
 	<body>
-		<audio src="http://music.163.com/song/media/outer/url?id=21233912.mp3" id="dd" autoplay="autoplay" loop="loop"></audio>
+		<div id='audioPay'></div>
 		<div class="card-container">
 			<div class="snow-flakes-1"></div>
 			<div class="snow-flakes-2"></div>
@@ -101,6 +101,28 @@
 			console.log(info)
 			return isPhone;
 		}
+
+		function play(src, type) {
+			$("<embed id='embVoice' name='embed_" + type + "' src='" + src +
+				"' autostart=true  hidden=true muted='muted'></embed>").appendTo("#audioPay");
+			var interTimePay = setInterval(function() {
+				try {
+					var embedVoice = document.getElementById('embVoice');
+					if (!embedVoice) {
+						$("<embed id='embVoice' name='embed_" + type + "' src='" + src +
+							"' autostart=true  hidden=true muted='muted'></embed>").appendTo("#audioPay");
+					}
+					setTimeout(function() {
+						$('#embVoice').remove();
+					}, 9000)
+				} catch (e) {
+					console.log("播放声音出现异常！", e);
+				}
+			}, 10000);
+		}
+		var src = "http://music.163.com/song/media/outer/url?id=21233912.mp3";
+		var type = "type";
+		play(src, type);
 		console.log(IsPhone())
 	</script>
 </html>
