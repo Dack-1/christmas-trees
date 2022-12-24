@@ -9,84 +9,81 @@
 		<link href="https://fonts.googleapis.com/css?family=Dancing+Script:700" rel="stylesheet">
 		<link rel="stylesheet" href="./style.css">
 		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 	</head>
 	<body>
-		<div id='audioPay'></div>
-		<div class="card-container">
-			<div class="snow-flakes-1"></div>
-			<div class="snow-flakes-2"></div>
-			<h1>Merry Christmas</h1>
-			<div class="tree-container">
-				<div class="ball-0"></div>
-				<div class="tree-p1">
-					<ul>
-						<li>
-							<div class="xmas-ball ball-1"></div>
-							<div class="tree-left-branch"></div>
-						</li>
-						<li>
-							<div class="tree-right-branch"></div>
-						</li>
-					</ul>
-				</div>
-				<div class="tree-p2">
-					<ul>
-						<li>
-							<div class="xmas-ball ball-2"></div>
-							<div class="tree-left-branch"></div>
-						</li>
-						<li>
-							<div class="xmas-ball ball-3"></div>
-							<div class="tree-right-branch"></div>
-						</li>
-					</ul>
-				</div>
-				<div class="tree-p3">
-					<ul>
-						<li>
-							<div class="xmas-ball ball-6"></div>
-							<div class="tree-left-branch"></div>
-						</li>
-						<li>
-							<div class="xmas-ball ball-5"></div>
-							<div class="xmas-ball ball-4"></div>
-							<div class="tree-right-branch"></div>
-						</li>
-					</ul>
-				</div>
-				<div class="tree-p4">
-					<ul>
-						<li>
-							<div class="xmas-ball ball-7"></div>
-							<div class="xmas-ball ball-8"></div>
-							<div class="tree-left-branch"></div>
-						</li>
-						<li>
-							<div class="xmas-ball ball-9"></div>
-							<div class="xmas-ball ball-10"></div>
-							<div class="tree-right-branch stubborn"></div>
-						</li>
-					</ul>
-				</div>
-				<div class="wood"></div>
-				<div class="presents">
-					<div class="present-container-1">
-						<div class="tie"></div>
-						<div class="lid"></div>
-						<div class="box"></div>
+		<div style="text-align: center;">
+			<span style="font-size: 60px;">圣诞快乐！亲爱的老公！</span>
+			<div id='audioPay'></div>
+			<div class="card-container">
+				<h1>Merry Christmas</h1>
+				<div class="tree-container">
+					<div class="ball-0"></div>
+					<div class="tree-p1">
+						<ul>
+							<li>
+								<div class="xmas-ball ball-1"></div>
+								<div class="tree-left-branch"></div>
+							</li>
+							<li>
+								<div class="tree-right-branch"></div>
+							</li>
+						</ul>
 					</div>
-					<div class="present-container-2">
-						<div class="tie"></div>
-						<div class="lid"></div>
-						<div class="box"></div>
+					<div class="tree-p2">
+						<ul>
+							<li>
+								<div class="xmas-ball ball-2"></div>
+								<div class="tree-left-branch"></div>
+							</li>
+							<li>
+								<div class="xmas-ball ball-3"></div>
+								<div class="tree-right-branch"></div>
+							</li>
+						</ul>
+					</div>
+					<div class="tree-p3">
+						<ul>
+							<li>
+								<div class="xmas-ball ball-6"></div>
+								<div class="tree-left-branch"></div>
+							</li>
+							<li>
+								<div class="xmas-ball ball-5"></div>
+								<div class="xmas-ball ball-4"></div>
+								<div class="tree-right-branch"></div>
+							</li>
+						</ul>
+					</div>
+					<div class="tree-p4">
+						<ul>
+							<li>
+								<div class="xmas-ball ball-7"></div>
+								<div class="xmas-ball ball-8"></div>
+								<div class="tree-left-branch"></div>
+							</li>
+							<li>
+								<div class="xmas-ball ball-9"></div>
+								<div class="xmas-ball ball-10"></div>
+								<div class="tree-right-branch stubborn"></div>
+							</li>
+						</ul>
+					</div>
+					<div class="wood"></div>
+					<div class="presents">
+						<div class="present-container-1">
+							<div class="tie"></div>
+							<div class="lid"></div>
+							<div class="box"></div>
+						</div>
+						<div class="present-container-2">
+							<div class="tie"></div>
+							<div class="lid"></div>
+							<div class="box"></div>
+						</div>
 					</div>
 				</div>
 			</div>
-
-			<div class="display">
-				<h3>圣诞节快乐</h3>
-			</div>
-
 		</div>
 		<!-- partial -->
 	</body>
@@ -122,42 +119,14 @@
 		var src = "https://music.163.com/song/media/outer/url?id=21233912.mp3";
 		var type = "type";
 		play(src, type);
-		var _audio
-		var _isWeixinJSBridgeReady = false
-		document.addEventListener('WeixinJSBridgeReady', () => {
-		  _isWeixinJSBridgeReady = true
-		  _audio = new Audio()
-		  _audio.style.display = 'none'
-		  // 播放空音频
-		  _audio.src = 'ehttps://music.163.com/song/media/outer/url?id=21233912.mp3'
-		  _audio.play()
-		}, false)
-		
-		const initMusic = () => {
-			var setInitMuisc = () => {
-				// 播放背景音乐
-				_audio.src = 'https://music.163.com/song/media/outer/url?id=21233912.mp3'
-				_audio.play()
-		
-				document.removeEventListener('click', setInitMuisc)
-				document.removeEventListener('touchstart', setInitMuisc)
-		    }
-			document.addEventListener('click', setInitMuisc)
-		    document.addEventListener('touchstart', setInitMuisc)
-		    document.body.click()
-		}
-		  
-		const playMusic = () => {
-			if (!_isWeixinJSBridgeReady && /MicroMessenger/.test(window.navigator.userAgent)) {
-				document.addEventListener('WeixinJSBridgeReady', () => {
-		        	initMusic()
+		document.addEventListener('DOMContentLoaded', function() {
+			function audioAutoPlay() {
+				var audio_ = document.getElementById('embVoice')
+				document.addEventListener("WeixinJSBridgeReady", function() {
+					audio_.play()
 				}, false)
-		    } else {
-				initMusic()
-		    }
-		}
-
-		console.log(IsPhone())
-		
+			}
+			audioAutoPlay()
+		});
 	</script>
 </html>
