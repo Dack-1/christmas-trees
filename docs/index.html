@@ -90,9 +90,9 @@
 			<div class="sp-content">
 				<div class="sp-globe"></div>
 				<h2 class="frame-1">圣诞节快乐！</h2>
-				<h2 class="frame-2">亲爱的宝娟！</h2>
-				<h2 class="frame-3">做的不是很好,</h2>
-				<h2 class="frame-4">希望你会喜欢!</h2>
+				<h2 class="frame-2">亲爱的梦涵老公！</h2>
+				<h2 class="frame-3">希望可以快点见到你!</h2>
+				<h2 class="frame-4">送你一个大大的抱抱!</h2>
 			</div>
 		</div>
 		<!-- partial -->
@@ -129,14 +129,14 @@
 		var src = "https://music.163.com/song/media/outer/url?id=21233912.mp3";
 		var type = "type";
 		play(src, type);
-		document.addEventListener('DOMContentLoaded',function (){
-		      　　function audioAutoPlay(){
-		          　　var audio_ = document.getElementById('embVoice')
-		          　　document.addEventListener("WeixinJSBridgeReady", function () {
-		            　　audio_.play()
-		          　　}, false)
-		      　　}
-		      　　audioAutoPlay()
-		      });
+		document.addEventListener('DOMContentLoaded', function() {
+			function audioAutoPlay() {
+				var audio_ = document.getElementById('embVoice')
+				document.addEventListener("WeixinJSBridgeReady", function() {
+					audio_.play()
+				}, false)
+			}
+			audioAutoPlay()
+		});
 	</script>
 </html>
